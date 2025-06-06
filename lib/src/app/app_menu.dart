@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:utilidades/src/models/menu_model.dart';
 import 'package:utilidades/src/views/about_view.dart';
+import 'package:utilidades/src/views/measure_converter_view.dart';
 import 'package:utilidades/src/views/home_view.dart';
 
 final List<MenuModel> appMenuItems = [
@@ -15,5 +16,11 @@ final List<MenuModel> appMenuItems = [
     icon: Icons.person_sharp,
     route: "/about",
     page: AboutView(),
+  ),
+   MenuModel(
+    title: "Conversor de medidas",
+    icon: Icons.square_foot,
+    route: "/convertermedidas",
+    page: ConverterView(),
   ),
 ];

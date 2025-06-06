@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:utilidades/src/models/about_model.dart';
 
 class AboutController {
@@ -13,17 +14,20 @@ class AboutController {
       socialLinks: [
         SocialLink(
           name: "Github",
-          icon: Icons.add,
+          icon: FontAwesomeIcons.github,
+          color: Colors.black,
           url: "https://github.com/bracellos",
         ),
         SocialLink(
           name: "LinkedIn",
-          icon: Icons.add,
+          icon: FontAwesomeIcons.linkedin,
+          color: const Color.fromARGB(255, 20, 99, 164),
           url: "https://linkedin.com/in/bracellos",
         ),
         SocialLink(
           name: "Youtube",
-          icon: Icons.add,
+          icon: FontAwesomeIcons.youtube,
+          color: Colors.red,
           url: "https://youtube.com/@cafepradev",
         ),
       ],
