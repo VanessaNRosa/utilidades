@@ -3,6 +3,7 @@ import 'package:utilidades/src/models/menu_model.dart';
 import 'package:utilidades/src/views/about_view.dart';
 import 'package:utilidades/src/views/measure_converter_view.dart';
 import 'package:utilidades/src/views/home_view.dart';
+import 'package:utilidades/src/views/temperature_view.dart';
 
 final List<MenuModel> appMenuItems = [
   MenuModel(
@@ -17,10 +18,17 @@ final List<MenuModel> appMenuItems = [
     route: "/about",
     page: AboutView(),
   ),
-   MenuModel(
+  MenuModel(
     title: "Conversor de medidas",
     icon: Icons.square_foot,
     route: "/convertermedidas",
     page: ConverterView(),
+  ),
+
+  MenuModel(
+    title: "Temperatura",
+    icon: Icons.device_thermostat,
+    route: "/temperatura",
+    page: TemperatureView(),
   ),
 ];
