@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:utilidades/src/controllers/temperature_controller.dart';
 
 class TemperatureView extends StatefulWidget {
@@ -11,8 +10,6 @@ class TemperatureView extends StatefulWidget {
 
 class _TemperatureViewState extends State<TemperatureView> {
   final TemperatureController _temperatureController = TemperatureController();
-
-  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -27,35 +24,41 @@ class _TemperatureViewState extends State<TemperatureView> {
       builder: (context, temperature, _) {
         return Center(
           child: Padding(
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Tempo em Blumenau hoje",
                   style: TextStyle(fontSize: 24, color: Colors.black),
                 ),
-                SizedBox(height: 16),
-                Icon(Icons.sunny, size: 64, color: Colors.amber),
-                SizedBox(height: 16),
-                Text(
-                  "${temperature.currentTemperature.toStringAsFixed(1)}°C",
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Text(
+                const SizedBox(height: 16),
+                const Icon(Icons.sunny, size: 64, color: Colors.amber),
+                const SizedBox(height: 16),
+
+                // Temperatura atual ou loading
+                temperature.isLoading
+                    ? const CircularProgressIndicator()
+                    : Text(
+                        "${temperature.currentTemperature.toStringAsFixed(1)}°C",
+                        style: const TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+
+                const SizedBox(height: 8),
+                const Text(
                   "Temperatura atual",
                   style: TextStyle(
                     fontSize: 18,
                     color: Color.fromARGB(255, 146, 191, 228),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
+
                 SizedBox(
                   height: 50,
                   width: 200,
@@ -71,7 +74,9 @@ class _TemperatureViewState extends State<TemperatureView> {
                     ),
                   ),
                 ),
-                SizedBox(height: 60),
+
+                const SizedBox(height: 60),
+
                 Text(
                   temperature.averageTemperature != null
                       ? "${temperature.averageTemperature!.toStringAsFixed(1)}°C"
@@ -91,6 +96,7 @@ class _TemperatureViewState extends State<TemperatureView> {
                   ),
                 ),
                 const SizedBox(height: 8),
+
                 SizedBox(
                   height: 50,
                   width: 250,
