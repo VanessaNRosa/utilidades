@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:utilidades/src/controllers/product_controller.dart';
 import 'package:utilidades/src/models/menu_model.dart';
 import 'package:utilidades/src/views/about_view.dart';
 import 'package:utilidades/src/views/measure_converter_view.dart';
 import 'package:utilidades/src/views/home_view.dart';
+import 'package:utilidades/src/views/product_list_page.view.dart';
 import 'package:utilidades/src/views/temperature_view.dart';
 
 final List<MenuModel> appMenuItems = [
@@ -31,4 +33,12 @@ final List<MenuModel> appMenuItems = [
     route: "/temperatura",
     page: TemperatureView(),
   ),
+  MenuModel(
+    title: "Produtos",
+    icon: Icons.production_quantity_limits,
+    route: "/produtos",
+    page: ProductListPage(),
+  ),
+
+
 ];
